@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSN - Pakistan Society of Neurology</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Owl Carousel -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <div class="ticker-item">Upcoming Event: PSN Annual Neurology Conference 2025 ★</div>
+                <div class="ticker-item">Continuing Medical Education (CME) Credits Available ★</div>
+                <div class="ticker-item">Research Grant Alert: Apply by August 1, 2025 ★</div>
+                <div class="ticker-item">New Guidelines Released: Epilepsy Management in Pakistan ★</div>
+                <div class="ticker-item">PSN Launches National Stroke Registry ★</div>
+                <div class="ticker-item">Resident Bootcamp 2025 – Registrations Now Open ★</div>
+                <div class="ticker-item">PSN Joins World Brain Day 2025 Campaign</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="logo.png" alt="Pak Neurology Network" class="img-fluid me-2" style="max-height: 60px;">
+                    </a>
+                </div>
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="social-icons me-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="header-buttons">
+                            
+                            <a class="btn btn-contact" href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" style="margin-bottom: 30px;">
+        <div class="container">
+            <div class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">About PSN</a></li>
+                                <li><a class="dropdown-item" href="mission.html">Mission & Vision</a></li>
+                                <li><a class="dropdown-item" href="leadership.html">Leadership</a></li>
+                                <li><a class="dropdown-item" href="committees.html">Committees</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                        <li class="nav-item"><a class="nav-link" href="members.html">Members</a></li>
+                        <li class="nav-item"><a class="nav-link" href="forum.html">Forum</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Resources</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="guidelines.html">Clinical Guidelines</a></li>
+                                <li><a class="dropdown-item" href="publications.html">Publications</a></li>
+                                <li><a class="dropdown-item" href="research.html">Research</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="chat.html">Chat</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <div class="search-box">
+                            <input type="search" class="form-control" placeholder="Search...">
+                            <button type="submit" class="btn btn-search"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid chat-container">
+        <div class="row h-100">
+            <!-- Contacts List -->
+            <div class="col-md-4 col-lg-3 p-0">
+                <div class="contacts-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Chats</h5>
+                        <button class="btn btn-sm btn-primary" onclick="showNewChatModal()">
+                            <i class="fas fa-plus"></i> New Chat
+                        </button>
+                    </div>
+                    <div class="mt-3">
+                        <div class="input-group">
+                            <span class="input-group-text bg-transparent border-end-0">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input type="text" class="form-control border-start-0" placeholder="Search contacts..." onkeyup="filterContacts(this.value)">
+                        </div>
+                    </div>
+                </div>
+                <div class="contacts-list" id="contactsList">
+                    <!-- Contacts will be dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="col-md-8 col-lg-9 p-0 d-flex flex-column">
+                <div class="chat-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <div class="position-relative">
+                                <img src="assets/images/team/naila-shahbaz.png" 
+                                     alt="Prof. Naila Shahbaz" 
+                                     class="rounded-circle me-2" 
+                                     style="width: 40px; height: 40px; object-fit: cover;"
+                                     onerror="this.src='assets/images/team/default-avatar.svg'">
+                                <span class="position-absolute bottom-0 end-0">
+                                    <span class="online-indicator"></span>
+                                </span>
+                            </div>
+                            <div>
+                                <h6 class="mb-0" id="currentChatName">Prof. Naila Shahbaz</h6>
+                                <small class="text-muted" id="currentChatStatus">Online</small>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-light btn-sm me-2" onclick="startVoiceCall()">
+                                <i class="fas fa-phone"></i>
+                            </button>
+                            <button class="btn btn-light btn-sm me-2" onclick="startVideoCall()">
+                                <i class="fas fa-video"></i>
+                            </button>
+                            <button class="btn btn-light btn-sm" onclick="showChatInfo()">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-messages" id="chatMessages">
+                    <!-- Messages will be dynamically populated -->
+                </div>
+
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                    <div class="typing-dot"></div>
+                </div>
+
+                <div class="chat-input">
+                    <form id="messageForm" onsubmit="sendMessage(event)">
+                        <div class="input-group">
+                            <button type="button" class="btn btn-light" onclick="showAttachmentOptions()">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <input type="text" class="form-control" placeholder="Type your message..." id="messageInput">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Script -->
+    <script>
+        // Demo contacts data
+        const contacts = [
+            { 
+                id: 1, 
+                name: "Prof. Naila Shahbaz",
+                role: "President, PSN",
+                status: "online",
+                avatar: "assets/images/team/naila-shahbaz.png",
+                lastMessage: "Looking forward to the upcoming conference."
+            },
+            { 
+                id: 2, 
+                name: "Dr. Muhammad Wasay",
+                role: "General Secretary, PSN",
+                status: "online",
+                avatar: "assets/images/team/muhammad-wasay.jpg",
+                lastMessage: "Please review the latest guidelines."
+            },
+            { 
+                id: 3, 
+                name: "Dr. Bashir A. Soomro",
+                role: "Senior Neurologist",
+                status: "away",
+                avatar: "assets/images/team/bashir-soomro.jpg",
+                lastMessage: "The workshop materials are ready."
+            },
+            { 
+                id: 4, 
+                name: "Dr. Khalid Sher",
+                role: "Senior VP, PSN",
+                status: "offline",
+                avatar: "assets/images/team/khalid-sher.jpg",
+                lastMessage: "Will share the case study tomorrow."
+            },
+            { 
+                id: 5, 
+                name: "Dr. Sarwar Siddiqui",
+                role: "Treasurer, PSN",
+                status: "online",
+                avatar: "assets/images/team/sarwar-siddiqui.jpg",
+                lastMessage: "The conference registration is now open."
+            }
+        ];
+
+        // Demo messages with proper image handling
+        const demoMessages = [
+            { 
+                sent: false, 
+                text: "Welcome to PSN Chat! How can I assist you today?",
+                time: "10:00 AM",
+                avatar: "assets/images/team/naila-shahbaz.png",
+                name: "Prof. Naila Shahbaz"
+            },
+            { 
+                sent: true, 
+                text: "I would like to discuss the upcoming neurology conference.",
+                time: "10:01 AM",
+                avatar: "assets/images/team/default-avatar.svg",
+                name: "You"
+            },
+            { 
+                sent: false, 
+                text: "Of course! The 31st Annual Conference is scheduled for March 15-17, 2025. Would you like more details about the program?",
+                time: "10:02 AM",
+                avatar: "assets/images/team/naila-shahbaz.png",
+                name: "Prof. Naila Shahbaz"
+            },
+            { 
+                sent: true, 
+                text: "Yes, please. I'm particularly interested in the research presentation sessions.",
+                time: "10:03 AM",
+                avatar: "assets/images/team/default-avatar.svg",
+                name: "You"
+            }
+        ];
+
+        // Initialize chat interface
+        window.onload = function() {
+            loadContacts();
+            loadMessages();
+        };
+
+        function loadContacts() {
+            const contactsList = document.getElementById('contactsList');
+            contactsList.innerHTML = contacts.map(contact => `
+                <div class="contact-item ${contact.id === 1 ? 'active' : ''}" onclick="switchContact(${contact.id})">
+                    <div class="d-flex align-items-center">
+                        <div class="position-relative">
+                            <img src="${contact.avatar}" 
+                                 alt="${contact.name}" 
+                                 class="rounded-circle" 
+                                 style="width: 50px; height: 50px; object-fit: cover;"
+                                 onerror="this.src='assets/images/team/default-avatar.svg'">
+                            ${contact.status === 'online' ? '<span class="position-absolute bottom-0 end-0 p-1"><span class="online-indicator"></span></span>' : ''}
+                        </div>
+                        <div class="flex-grow-1 ms-3">
+                            <h6 class="mb-0">${contact.name}</h6>
+                            <small class="text-muted">${contact.role}</small>
+                            <p class="mb-0 small text-truncate" style="max-width: 150px;">${contact.lastMessage}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function loadMessages() {
+            const chatMessages = document.getElementById('chatMessages');
+            chatMessages.innerHTML = '';
+            
+            demoMessages.forEach(msg => {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${msg.sent ? 'sent' : 'received'}`;
+                
+                const messageHTML = `
+                    ${!msg.sent ? `
+                        <div class="avatar-wrapper">
+                            <img src="${msg.avatar}" 
+                                 alt="${msg.name}" 
+                                 class="message-avatar"
+                                 onerror="this.src='assets/images/team/default-avatar.svg'">
+                        </div>
+                    ` : ''}
+                    <div class="message-content">
+                        <p class="mb-0">${msg.text}</p>
+                        <small class="text-muted">${msg.time}</small>
+                    </div>
+                    ${msg.sent ? `
+                        <div class="avatar-wrapper">
+                            <img src="${msg.avatar}" 
+                                 alt="${msg.name}" 
+                                 class="message-avatar"
+                                 onerror="this.src='assets/images/team/default-avatar.svg'">
+                        </div>
+                    ` : ''}
+                `;
+                
+                messageDiv.innerHTML = messageHTML;
+                chatMessages.appendChild(messageDiv);
+            });
+            
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function sendMessage(event) {
+            event.preventDefault();
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+            
+            if (message) {
+                // Add user message
+                addMessage(true, message);
+                input.value = '';
+
+                // Show typing indicator
+                showTypingIndicator();
+
+                // Simulate response after delay
+                setTimeout(() => {
+                    hideTypingIndicator();
+                    addMessage(false, getAutoResponse());
+                }, 2000);
+            }
+        }
+
+        function addMessage(sent, text) {
+            const chatMessages = document.getElementById('chatMessages');
+            const time = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            const avatar = sent ? 'assets/images/team/default-avatar.svg' : 'assets/images/team/naila-shahbaz.png';
+            const name = sent ? 'You' : 'Prof. Naila Shahbaz';
+            
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sent ? 'sent' : 'received'}`;
+            
+            const messageHTML = `
+                ${!sent ? `
+                    <div class="avatar-wrapper">
+                        <img src="${avatar}" 
+                             alt="${name}" 
+                             class="message-avatar"
+                             onerror="this.src='assets/images/team/default-avatar.svg'">
+                    </div>
+                ` : ''}
+                <div class="message-content">
+                    <p class="mb-0">${text}</p>
+                    <small class="text-muted">${time}</small>
+                </div>
+                ${sent ? `
+                    <div class="avatar-wrapper">
+                        <img src="${avatar}" 
+                             alt="${name}" 
+                             class="message-avatar"
+                             onerror="this.src='assets/images/team/default-avatar.svg'">
+                    </div>
+                ` : ''}
+            `;
+            
+            messageDiv.innerHTML = messageHTML;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function showTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'block';
+        }
+
+        function hideTypingIndicator() {
+            document.getElementById('typingIndicator').style.display = 'none';
+        }
+
+        function getAutoResponse() {
+            const responses = [
+                "I understand. Could you provide more details?",
+                "That's interesting. Let me check my notes.",
+                "I'll look into this and get back to you soon.",
+                "Have you considered running additional tests?",
+                "This case seems similar to one I saw recently."
+            ];
+            return responses[Math.floor(Math.random() * responses.length)];
+        }
+
+        function switchContact(id) {
+            // Update active contact
+            document.querySelectorAll('.contact-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.currentTarget.classList.add('active');
+
+            // Update chat header
+            const contact = contacts.find(c => c.id === id);
+            document.getElementById('currentChatName').textContent = contact.name;
+            
+            // Update header image and role
+            const headerImg = document.querySelector('.chat-header img');
+            headerImg.src = contact.avatar;
+            document.querySelector('.chat-header small.text-muted').innerHTML = `
+                <span class="online-indicator"></span>
+                ${contact.role}
+            `;
+
+            // Clear chat and load new messages
+            document.getElementById('chatMessages').innerHTML = '';
+            loadMessages();
+        }
+
+        function filterContacts(query) {
+            const items = document.querySelectorAll('.contact-item');
+            query = query.toLowerCase();
+            
+            items.forEach(item => {
+                const name = item.querySelector('h6').textContent.toLowerCase();
+                item.style.display = name.includes(query) ? 'block' : 'none';
+            });
+        }
+
+        // Placeholder functions for other features
+        function showNewChatModal() {
+            alert('New Chat feature will be implemented here');
+        }
+
+        function startVoiceCall() {
+            $('#voiceCallModal').modal('show');
+            // Initialize WebRTC here
+        }
+
+        function startVideoCall() {
+            $('#videoCallModal').modal('show');
+            // Initialize WebRTC here
+        }
+
+        function showChatInfo() {
+            alert('Chat Info feature will be implemented here');
+        }
+
+        function showAttachmentOptions() {
+            alert('Attachment options will be implemented here');
+        }
+    </script>
+
+    <!-- Video Call Modal -->
+    <div class="modal fade" id="videoCallModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body p-0">
+                    <div class="video-call-container">
+                        <div class="main-video">
+                            <video id="remoteVideo" autoplay playsinline></video>
+                        </div>
+                        <div class="self-video">
+                            <video id="localVideo" autoplay playsinline muted></video>
+                        </div>
+                        <div class="call-controls">
+                            <button class="btn btn-light rounded-circle" onclick="toggleMute()">
+                                <i class="fas fa-microphone"></i>
+                            </button>
+                            <button class="btn btn-light rounded-circle" onclick="toggleVideo()">
+                                <i class="fas fa-video"></i>
+                            </button>
+                            <button class="btn btn-danger rounded-circle" onclick="endCall()">
+                                <i class="fas fa-phone-slash"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Voice Call Modal -->
+    <div class="modal fade" id="voiceCallModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body text-center py-5">
+                    <img src="assets/images/team/naila-shahbaz.jpg" alt="Prof. Naila Shahbaz" class="rounded-circle mb-4" width="100" style="height: 100px; object-fit: cover;">
+                    <h5>Prof. Naila Shahbaz</h5>
+                    <p class="text-muted" id="callStatus">Calling...</p>
+                    <div class="call-controls mt-4">
+                        <button class="btn btn-light rounded-circle mx-2" onclick="toggleMute()">
+                            <i class="fas fa-microphone"></i>
+                        </button>
+                        <button class="btn btn-light rounded-circle mx-2" onclick="toggleSpeaker()">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="btn btn-danger rounded-circle mx-2" onclick="endCall()">
+                            <i class="fas fa-phone-slash"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- New Group Modal -->
+    <div class="modal fade" id="newGroupModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create New Group</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Group Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Group Description</label>
+                            <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Add Members</label>
+                            <select class="form-select" multiple>
+                                <option>Dr. Ahmed Khan</option>
+                                <option>Dr. Sarah Ali</option>
+                                <option>Dr. Muhammad Qasim</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Create Group</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>About PSN</h5>
+                    <p class="text-light">Pakistan Society of Neurology (PSN) is dedicated to promoting excellence in clinical neurology, research, and education while fostering collaboration among neurologists across Pakistan.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/PakistanSocietyofNeurology" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/PakNeurology" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/pakistan-society-of-neurology" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UCxxxxxxxx" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/pakistansocietyofneurology" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About PSN</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="events.html">Events & CME</a></li>
+                        <li><a href="guidelines.html">Clinical Guidelines</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="research.html">Research</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="news.html">Latest News</a></li>
+                        <li><a href="forum.html">Discussion Forum</a></li>
+                        <li><a href="articles.html">Scientific Articles</a></li>
+                        <li><a href="projects.html">Current Projects</a></li>
+                        <li><a href="committees.html">Committees</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Information</h5>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> PSN House, 706, Block 7-8, Anum Estate,<br>Darul Aman Society, Shahrah-e-Faisal,<br>Karachi</li>
+                        <li><i class="fas fa-phone"></i> +9221-34310578</li>
+                        <li><i class="fas fa-envelope"></i> info@pakneurology.com</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="https://www.pakneurologynetwork.com/membershipForm/step1" class="btn btn-primary">Join PSN</a>
+                        <a href="#" class="btn btn-outline-light ms-2">Donate</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 copyright-text">&copy; 2025 Pakistan Society of Neurology. All rights reserved. Developed by Softsols Pakistan</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <span class="me-2">Powered By</span>
+                        <img src="helix logo.png" alt="Helix Pharma" style="height: 40px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <!-- Initialize Bootstrap modals -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var modals = [].slice.call(document.querySelectorAll('.modal'))
+            var modalInstances = modals.map(function(modal) {
+                return new bootstrap.Modal(modal)
+            })
+        })
+    </script>
+
+</body>
+</html> 

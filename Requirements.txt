@@ -1,0 +1,9 @@
+I would like to design a HTML Website similar to https://appna.org/
+
+Need similar clone of https://appna.org/ including all pages and follow the design of https://pakneurology.com/ and https://www.pakneurologynetwork.com/
+
+I need HTML Website but with all pages as in https://appna.org/
+
+requests==2.31.0
+beautifulsoup4==4.12.2
+Pillow==10.0.0

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PSN Members Directory - Pakistan Society of Neurology</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+    <style>
+        .member-card {
+            transition: transform 0.2s;
+            height: 100%;
+            cursor: pointer;
+        }
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .member-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto;
+            border: 3px solid #f8f9fa;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        .filter-section {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .member-details {
+            text-align: center;
+        }
+        .member-name {
+            color: var(--primary-color);
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        .member-designation {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .member-location {
+            color: #888;
+            font-size: 0.85rem;
+        }
+        #searchInput {
+            border-radius: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .filter-label {
+            font-weight: 600;
+            color: #444;
+            margin-bottom: 8px;
+        }
+        .filter-select {
+            border-radius: 20px;
+        }
+        .no-results {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+        #loading {
+            text-align: center;
+            padding: 50px;
+        }
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding-top: 3rem;
+            padding-bottom: 1rem;
+        }
+        .footer h5 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .footer ul li a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer ul li a:hover {
+            color: white;
+        }
+        .footer .social-links a {
+            color: white;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            transition: opacity 0.3s;
+        }
+        .footer .social-links a:hover {
+            opacity: 0.8;
+        }
+        .footer .contact-info li {
+            margin-bottom: 1rem;
+            color: rgba(255,255,255,0.8);
+        }
+        .footer .contact-info li i {
+            margin-right: 0.5rem;
+            width: 20px;
+            text-align: center;
+        }
+        .copyright-text {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Announcement Bar -->
+    <div class="announcement-bar">
+        <div class="ticker-wrap">
+            <div class="ticker">
+                <div class="ticker-item">Upcoming Event: PSN Annual Neurology Conference 2025 ★</div>
+                <div class="ticker-item">Continuing Medical Education (CME) Credits Available ★</div>
+                <div class="ticker-item">Research Grant Alert: Apply by August 1, 2025 ★</div>
+                <div class="ticker-item">New Guidelines Released: Epilepsy Management in Pakistan ★</div>
+                <div class="ticker-item">PSN Launches National Stroke Registry ★</div>
+                <div class="ticker-item">Resident Bootcamp 2025 – Registrations Now Open ★</div>
+                <div class="ticker-item">PSN Joins World Brain Day 2025 Campaign</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3">
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="logo.png" alt="Pak Neurology Network" class="img-fluid me-2" style="max-height: 60px;">
+                    </a>
+                </div>
+                <div class="col-lg-9">
+                    <div class="d-flex justify-content-end align-items-center">
+                        <div class="social-icons me-4">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                        <div class="header-buttons">
+                            <a class="btn btn-contact" href="contact.html">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav" style="margin-bottom: 30px;">
+        <div class="container">
+            <div class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link" href="dashboard.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">About</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">About PSN</a></li>
+                                <li><a class="dropdown-item" href="mission.html">Mission & Vision</a></li>
+                                <li><a class="dropdown-item" href="leadership.html">Leadership</a></li>
+                                <li><a class="dropdown-item" href="committees.html">Committees</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="news.html">News</a></li>
+                        <li class="nav-item"><a class="nav-link" href="events.html">Events</a></li>
+                        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="articles.html">Articles</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="members.html">Members</a></li>
+                        <li class="nav-item"><a class="nav-link" href="forum.html">Forum</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Resources</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="guidelines.html">Clinical Guidelines</a></li>
+                                <li><a class="dropdown-item" href="publications.html">Publications</a></li>
+                                <li><a class="dropdown-item" href="research.html">Research</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="chat.html">Chat</a></li>
+                    </ul>
+                    <form class="d-flex">
+                        <div class="search-box">
+                            <input type="search" class="form-control" placeholder="Search...">
+                            <button type="submit" class="btn btn-search"><i class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Members Directory Section -->
+    <section class="members-directory py-5">
+        <div class="container">
+            <h1 class="text-center mb-5">PSN Members Directory</h1>
+            
+            <!-- Filters -->
+            <div class="filter-section">
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <label for="searchInput" class="filter-label">Search Members</label>
+                        <input type="text" id="searchInput" class="form-control" placeholder="Search by name, designation, or location...">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="genderFilter" class="filter-label">Gender</label>
+                        <select id="genderFilter" class="form-select filter-select">
+                            <option value="">All</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="designationFilter" class="filter-label">Designation</label>
+                        <select id="designationFilter" class="form-select filter-select">
+                            <option value="">All</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="provinceFilter" class="filter-label">Province</label>
+                        <select id="provinceFilter" class="form-select filter-select">
+                            <option value="">All</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2">
+                        <label for="cityFilter" class="filter-label">City</label>
+                        <select id="cityFilter" class="form-select filter-select">
+                            <option value="">All</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" style="display: none;">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <p class="mt-3">Loading members...</p>
+            </div>
+
+            <!-- Members Grid -->
+            <div class="row g-4" id="membersGrid">
+                <!-- Members will be dynamically added here -->
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="no-results" style="display: none;">
+                <i class="fas fa-search fa-3x mb-3"></i>
+                <h3>No members found</h3>
+                <p>Try adjusting your search criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Member Details Modal -->
+    <div class="modal fade" id="memberModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Member Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Member details will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>About PSN</h5>
+                    <p>Pakistan Society of Neurology (PSN) is dedicated to promoting excellence in clinical neurology, research, and education while fostering collaboration among neurologists across Pakistan.</p>
+                    <div class="social-links mt-3">
+                        <a href="https://www.facebook.com/PakistanSocietyofNeurology" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/PakNeurology" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/company/pakistan-society-of-neurology" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UCxxxxxxxx" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/pakistansocietyofneurology" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="about.html">About PSN</a></li>
+                        <li><a href="membership.html">Membership</a></li>
+                        <li><a href="events.html">Events & CME</a></li>
+                        <li><a href="guidelines.html">Clinical Guidelines</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="research.html">Research</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Resources</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="news.html">Latest News</a></li>
+                        <li><a href="forum.html">Discussion Forum</a></li>
+                        <li><a href="articles.html">Scientific Articles</a></li>
+                        <li><a href="projects.html">Current Projects</a></li>
+                        <li><a href="committees.html">Committees</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Information</h5>
+                    <ul class="list-unstyled contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> PSN House, 706, Block 7-8, Anum Estate,<br>Darul Aman Society, Shahrah-e-Faisal,<br>Karachi</li>
+                        <li><i class="fas fa-phone"></i> +9221-34310578</li>
+                        <li><i class="fas fa-envelope"></i> info@pakneurology.com</li>
+                    </ul>
+                    <div class="mt-3">
+                        <a href="https://www.pakneurologynetwork.com/membershipForm/step1" class="btn btn-primary">Join PSN</a>
+                        <a href="#" class="btn btn-outline-light ms-2">Donate</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-3">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="mb-0 copyright-text">&copy; 2025 Pakistan Society of Neurology. All rights reserved. Developed by Softsols Pakistan</p>
+                </div>
+                <div class="col-md-6 text-end">
+                    <div class="d-flex align-items-center justify-content-end">
+                        <span class="me-2">Powered By</span>
+                        <img src="helix logo.png" alt="Helix Pharma" style="height: 40px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Default avatar SVG
+        const defaultAvatar = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="%23999"><rect width="150" height="150" fill="%23f8f9fa"/><text x="75" y="85" font-size="60" text-anchor="middle" dominant-baseline="middle">👤</text></svg>`;
+
+        let members = [];
+        let filters = {
+            search: '',
+            gender: '',
+            designation: '',
+            province: '',
+            city: ''
+        };
+
+        // Fetch and display members
+        async function fetchMembers() {
+            const loadingDiv = document.getElementById('loading');
+            const membersGrid = document.getElementById('membersGrid');
+            const noResults = document.getElementById('noResults');
+            
+            try {
+                loadingDiv.style.display = 'block';
+                membersGrid.style.display = 'none';
+                noResults.style.display = 'none';
+
+                // Simple fetch with better error handling
+                const response = await fetch('assets/data/members.json');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                console.log('Loaded members:', data.length);
+
+                if (!Array.isArray(data)) {
+                    throw new Error('Invalid data format: expected an array');
+                }
+
+                members = data;
+                updateFilters();
+                displayMembers();
+            } catch (error) {
+                console.error('Error fetching members:', error);
+                membersGrid.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-danger" role="alert">
+                            <h4 class="alert-heading">Error Loading Members</h4>
+                            <p>There was a problem loading the members data. Please try refreshing the page.</p>
+                            <hr>
+                            <p class="mb-0">Error details: ${error.message}</p>
+                            <p class="mt-2">
+                                <button onclick="fetchMembers()" class="btn btn-primary">
+                                    <i class="fas fa-sync-alt"></i> Try Again
+                                </button>
+                            </p>
+                        </div>
+                    </div>
+                `;
+            } finally {
+                loadingDiv.style.display = 'none';
+                membersGrid.style.display = 'flex';
+            }
+        }
+
+        // Update filter options
+        function updateFilters() {
+            console.log('Updating filters with members:', members.length);
+            const uniqueValues = {
+                gender: new Set(),
+                designation: new Set(),
+                province: new Set(),
+                city: new Set()
+            };
+
+            members.forEach(member => {
+                if (member.gender) uniqueValues.gender.add(member.gender);
+                if (member.designation) uniqueValues.designation.add(member.designation);
+                if (member.province) uniqueValues.province.add(member.province);
+                if (member.city) uniqueValues.city.add(member.city);
+            });
+
+            // Update select options
+            for (const [key, values] of Object.entries(uniqueValues)) {
+                const select = document.getElementById(`${key}Filter`);
+                select.innerHTML = '<option value="">All</option>';
+                Array.from(values).sort().forEach(value => {
+                    const option = document.createElement('option');
+                    option.value = value;
+                    option.textContent = value;
+                    select.appendChild(option);
+                });
+            }
+        }
+
+        // Filter members
+        function filterMembers() {
+            return members.filter(member => {
+                const searchMatch = !filters.search || 
+                    member.name?.toLowerCase().includes(filters.search.toLowerCase()) ||
+                    member.designation?.toLowerCase().includes(filters.search.toLowerCase()) ||
+                    member.city?.toLowerCase().includes(filters.search.toLowerCase()) ||
+                    member.province?.toLowerCase().includes(filters.search.toLowerCase()) ||
+                    member.institution?.toLowerCase().includes(filters.search.toLowerCase());
+                
+                const genderMatch = !filters.gender || member.gender === filters.gender;
+                const designationMatch = !filters.designation || member.designation === filters.designation;
+                const provinceMatch = !filters.province || member.province === filters.province;
+                const cityMatch = !filters.city || member.city === filters.city;
+
+                return searchMatch && genderMatch && designationMatch && provinceMatch && cityMatch;
+            });
+        }
+
+        // Display members
+        function displayMembers() {
+            console.log('Displaying members, total:', members.length);
+            const grid = document.getElementById('membersGrid');
+            const filteredMembers = filterMembers();
+            console.log('Filtered members:', filteredMembers.length);
+            
+            grid.innerHTML = '';
+            
+            if (filteredMembers.length === 0) {
+                document.getElementById('noResults').style.display = 'block';
+                return;
+            }
+            
+            document.getElementById('noResults').style.display = 'none';
+            
+            filteredMembers.forEach(member => {
+                const card = document.createElement('div');
+                card.className = 'col-md-4 col-lg-3 mb-4';
+                card.innerHTML = `
+                    <div class="card member-card h-100" onclick="showMemberDetails(${member.id})">
+                        <div class="card-body">
+                            <div class="member-details">
+                                <img src="${member.photo_url || defaultAvatar}" alt="${member.name}" class="member-image mb-3">
+                                <h5 class="member-name">${member.name}</h5>
+                                <p class="member-designation">${member.designation || ''}</p>
+                                <p class="member-institution text-muted small mb-2">${member.institution || ''}</p>
+                                <p class="member-location">
+                                    ${member.city ? `<i class="fas fa-map-marker-alt"></i> ${member.city}` : ''}
+                                    ${member.province ? `, ${member.province}` : ''}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+            console.log('Finished displaying members');
+        }
+
+        // Show member details
+        function showMemberDetails(memberId) {
+            const member = members.find(m => m.id === memberId);
+            if (!member) return;
+
+            const modalBody = document.querySelector('#memberModal .modal-body');
+            modalBody.innerHTML = `
+                <div class="text-center mb-4">
+                    <img src="${member.photo_url || defaultAvatar}" alt="${member.name}" class="member-image mb-3">
+                    <h3 class="member-name">${member.name}</h3>
+                    ${member.designation ? `<p class="member-designation">${member.designation}</p>` : ''}
+                    ${member.institution ? `<p class="text-muted">${member.institution}</p>` : ''}
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Contact Information</h5>
+                        <ul class="list-unstyled">
+                            ${member.email ? `<li><i class="fas fa-envelope"></i> ${member.email}</li>` : ''}
+                            ${member.phone ? `<li><i class="fas fa-phone"></i> ${member.phone}</li>` : ''}
+                            ${member.city ? `<li><i class="fas fa-map-marker-alt"></i> ${member.city}${member.province ? `, ${member.province}` : ''}</li>` : ''}
+                            ${member.country ? `<li><i class="fas fa-globe"></i> ${member.country}</li>` : ''}
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5>Institution Details</h5>
+                        <ul class="list-unstyled">
+                            ${member.institution ? `<li><strong>Institution:</strong> ${member.institution}</li>` : ''}
+                            ${member.institution_address ? `<li><strong>Address:</strong> ${member.institution_address}</li>` : ''}
+                        </ul>
+                    </div>
+                </div>
+            `;
+
+            const modal = new bootstrap.Modal(document.getElementById('memberModal'));
+            modal.show();
+        }
+
+        // Event listeners
+        document.getElementById('searchInput').addEventListener('input', e => {
+            filters.search = e.target.value;
+            displayMembers();
+        });
+
+        ['gender', 'designation', 'province', 'city'].forEach(filter => {
+            document.getElementById(`${filter}Filter`).addEventListener('change', e => {
+                filters[filter] = e.target.value;
+                displayMembers();
+            });
+        });
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log('DOM loaded, fetching members...');
+            fetchMembers();
+        });
+    </script>
+</body>
+</html> 

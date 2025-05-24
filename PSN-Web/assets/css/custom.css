@@ -1,0 +1,40 @@
+/* Custom styles for PSN website */
+
+/* Ticker separator styles */
+.ticker-item {
+    position: relative;
+}
+
+.ticker-item:after {
+    content: "★";
+    margin-left: 30px;
+    color: #FFB845;
+    opacity: 0.8;
+}
+
+.ticker-item:last-child:after {
+    display: none;
+}
+
+/* Navigation spacing */
+.main-nav {
+    margin-bottom: 30px !important;
+}
+
+/* Header button colors */
+.btn-donation,
+.btn-join {
+    color: #000 !important;
+}
+
+/* Image styles */
+.president-image img {
+    max-width: 300px;
+    border: 4px solid #009B77;
+}
+
+.hero-slider .item img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+} 
