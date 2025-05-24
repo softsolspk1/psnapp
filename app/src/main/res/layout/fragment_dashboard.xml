@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="Welcome, Dr. John Doe"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="4">
+
+            <!-- News -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_news"
+                style="@style/DashboardCard">
+
+                <LinearLayout style="@style/DashboardCardContent">
+
+                    <ImageView
+                        style="@style/DashboardIcon"
+                        android:src="@drawable/ic_news" />
+
+                    <TextView
+                        style="@style/DashboardText"
+                        android:text="News" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Events -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_events"
+                style="@style/DashboardCard">
+
+                <LinearLayout style="@style/DashboardCardContent">
+
+                    <ImageView
+                        style="@style/DashboardIcon"
+                        android:src="@drawable/ic_events" />
+
+                    <TextView
+                        style="@style/DashboardText"
+                        android:text="Events" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Projects -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_projects"
+                style="@style/DashboardCard">
+
+                <LinearLayout style="@style/DashboardCardContent">
+
+                    <ImageView
+                        style="@style/DashboardIcon"
+                        android:src="@drawable/ic_projects" />
+
+                    <TextView
+                        style="@style/DashboardText"
+                        android:text="Projects" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Forum -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_forum"
+                style="@style/DashboardCard">
+
+                <LinearLayout style="@style/DashboardCardContent">
+
+                    <ImageView
+                        style="@style/DashboardIcon"
+                        android:src="@drawable/ic_forum" />
+
+                    <TextView
+                        style="@style/DashboardText"
+                        android:text="Forum" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Articles -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_articles"
+                style="@style/DashboardCard">
+
+                <LinearLayout style="@style/DashboardCardContent">
+
+                    <ImageView
+                        style="@style/DashboardIcon"
+                        android:src="@drawable/ic_articles" />
+
+                    <TextView
+                        style="@style/DashboardText"
+                        android:text="Articles" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Resources -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_resources"
+                style="@style/DashboardCard">
+
+                <LinearLayout style="@style/DashboardCardContent">
+
+                    <ImageView
+                        style="@style/DashboardIcon"
+                        android:src="@drawable/ic_resources" />
+
+                    <TextView
+                        style="@style/DashboardText"
+                        android:text="Resources" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Chat -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_chat"
+                style="@style/DashboardCard">
+
+                <LinearLayout style="@style/DashboardCardContent">
+
+                    <ImageView
+                        style="@style/DashboardIcon"
+                        android:src="@drawable/ic_chat" />
+
+                    <TextView
+                        style="@style/DashboardText"
+                        android:text="Chat" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Members -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_members"
+                style="@style/DashboardCard">
+
+                <LinearLayout style="@style/DashboardCardContent">
+
+                    <ImageView
+                        style="@style/DashboardIcon"
+                        android:src="@drawable/ic_members" />
+
+                    <TextView
+                        style="@style/DashboardText"
+                        android:text="Members" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </GridLayout>
+
+    </LinearLayout>
+
+</ScrollView> 

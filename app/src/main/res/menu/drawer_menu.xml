@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/menu_home" />
+    <item
+        android:id="@+id/nav_about"
+        android:icon="@drawable/ic_about"
+        android:title="@string/menu_about" />
+    <item
+        android:id="@+id/nav_news"
+        android:icon="@drawable/ic_news"
+        android:title="@string/menu_news" />
+    <item
+        android:id="@+id/nav_events"
+        android:icon="@drawable/ic_events"
+        android:title="@string/menu_events" />
+    <item
+        android:id="@+id/nav_projects"
+        android:icon="@drawable/ic_projects"
+        android:title="@string/menu_projects" />
+    <item
+        android:id="@+id/nav_forum"
+        android:icon="@drawable/ic_forum"
+        android:title="@string/menu_forum" />
+    <item
+        android:id="@+id/nav_articles"
+        android:icon="@drawable/ic_articles"
+        android:title="@string/menu_articles" />
+    <item
+        android:id="@+id/nav_resources"
+        android:icon="@drawable/ic_resources"
+        android:title="@string/menu_resources" />
+    <item
+        android:id="@+id/nav_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/menu_chat" />
+    <item
+        android:id="@+id/nav_members"
+        android:icon="@drawable/ic_members"
+        android:title="@string/menu_members" />
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/menu_logout" />
+</menu> 
